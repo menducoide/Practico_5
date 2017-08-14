@@ -1,3 +1,4 @@
+package Clases;
 
 public class Alumno {
 
@@ -14,6 +15,9 @@ public Alumno(String nombreAlumno, String apellidoAlumno, String nombreUsuarioAl
 	this.apellidoAlumno = apellidoAlumno;
 	this.nombreUsuarioAlumno = nombreUsuarioAlumno;
 	this.contraseniaAlumno = contraseniaAlumno;
+}
+public Alumno() {
+	
 }
 
 // GET_SET
@@ -42,5 +46,47 @@ public void setContraseniaAlumno(String contraseniaAlumno) {
 	this.contraseniaAlumno = contraseniaAlumno;
 }
 
+
+// *** METHODS
+
+
+public boolean validarLongitudNombreUsuarioAlumno(String nombre_usuario){
+	if  (nombre_usuario.length()>12) {
+		
+		return false;
+	} else {
+		return true;
+	}
+		
+	
+}
+public boolean validarLongitudContraseniaAlumno(String contrasenia){
+	if  (contrasenia.length()>12) {
+		
+		return false;
+	} else {
+		return true;
+	}
+		
+	
+}
+
+
+
+public boolean accesoAltaAlumno(String nombre_alumno,String apellido_Alumno, String nombre_Usuario, String contrasenia)
+{
+	if (nombre_Usuario.length()>12 && contrasenia.length() >12) {
+		
+		return false;
+	
+			
+	}
+	else {
+		
+		return true;
+	}
+	
+		
+}
 
 }
