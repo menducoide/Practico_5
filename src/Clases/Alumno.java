@@ -1,5 +1,7 @@
 package Clases;
 
+import Exception.CadenaNulaException;
+
 public class Alumno {
 
 // ATRIBUTES
@@ -50,18 +52,26 @@ public void setContraseniaAlumno(String contraseniaAlumno) {
 // *** METHODS
 
 
-public boolean validarLongitudNombreUsuarioAlumno(String nombre_usuario){
-	if  (nombre_usuario.length()>12) {
-		
-		return false;
-	} else {
-		return true;
+public boolean validarLongitudNombreUsuarioAlumno() throws CadenaNulaException  {
+				
+		if  (this.nombreUsuarioAlumno.length()>12) {
+			return false;
+		} else if (this.nombreUsuarioAlumno.length()<12) {
+			return true;
+		}		else {
+			throw new CadenaNulaException(); 
+		}
 	}
-		
+
 	
-}
-public boolean validarLongitudContraseniaAlumno(String contrasenia){
-	if  (contrasenia.length()>12) {
+
+	
+
+
+
+
+public boolean validarLongitudContraseniaAlumno(){
+	if  (this.contraseniaAlumno.length()>12) {
 		
 		return false;
 	} else {
@@ -71,11 +81,26 @@ public boolean validarLongitudContraseniaAlumno(String contrasenia){
 	
 }
 
+public boolean validarInstructores() {
+	
+	if (new Instructor().accesoGetInstructores() != null ) {
+		return true;
+		
+	}else {return false;}
+	
+}
 
+public void validarNombreUsuarioNulo() throws CadenaNulaException {
+	if (this.nombreAlumno == null) {
+		throw new CadenaNulaException();
+		
+	}
+	
+}
 
 public boolean accesoAltaAlumno(String nombre_alumno,String apellido_Alumno, String nombre_Usuario, String contrasenia)
 {
-	if (nombre_Usuario.length()>12 && contrasenia.length() >12) {
+	if (this.nombreUsuarioAlumno.length()>12 && contrasenia.length() >12) {
 		
 		return false;
 	

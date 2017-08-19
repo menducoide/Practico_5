@@ -1,5 +1,8 @@
 package Clases;
 
+
+import Exception.*;
+
 public class Nivel {
 
 	
@@ -32,5 +35,18 @@ public class Nivel {
 		this.numeroOrdenNivel = numeroOrdenNivel;
 	}
 	
+	public boolean validarPuntosExperienciaRequeridosNoNegativos() {		
+		if (this.puntosExperienciaRequeridos < 0 ) {return false;}
+		else {return true;}		
+	}
+	public boolean validarPuntosExperienciaRequeridosNoCero() {		
+		if (this.puntosExperienciaRequeridos == 0 ) {return false;}
+		else {return true;}		
+	}
 	
+	public void validarNombreNivelNoNulo() throws CadenaNulaException{		
+		if (this.nombreNivel == null ) {throw new CadenaNulaException();}	
+	}
+	
+
 }

@@ -1,4 +1,7 @@
+
 package Clases;
+
+import Exception.CadenaNulaException;
 
 public class Instructor {
 
@@ -50,6 +53,22 @@ public void setContraseniaInstructor(String contraseniaInstructor) {
 
 // *** METHODS
 
+public Instructor accesoGetInstructores()
+{
+	
+return null;
+		}
+
+public void validarNombreInstructor() throws CadenaNulaException {
+	if (this.nombreInstructor == null | this.nombreInstructor.length() == 0){
+		throw new CadenaNulaException();
+		
+	}
+	
+}
+
+
 
 
 }
+
